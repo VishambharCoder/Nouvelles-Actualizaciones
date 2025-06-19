@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nouvelles Actualizaciones</title>
+  <script>
+    // Configure Tailwind CSS for class-based dark mode
+    // This MUST come before the Tailwind CDN script
+    window.tailwind = {
+      darkMode: 'class',
+    }
+  </script>
+  <script>
+    // Apply dark mode based on OS preference, runs early to avoid FOUC
+    // Adheres to OS preference and updates if OS theme changes during session.
+    (function() {
+      const applyTheme = (isDark) => {
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      applyTheme(mediaQuery.matches); // Apply initial theme
+
+      mediaQuery.addEventListener('change', (e) => {
+        applyTheme(e.matches); // Listen for changes
+      });
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>">
+  <link rel="manifest" href="/assets/manifest-DPhWxN_l.json">
+
+  <style>
+    /* Custom scrollbar for webkit browsers */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #2d3748; /* Darker track for dark mode */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #555;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+      background: #444;
+    }
+    body {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1; /* thumb track */
+    }
+    .dark body {
+       scrollbar-color: #555 #2d3748; /* thumb track for dark mode */
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.1.0/client",
+    "@google/genai": "https://esm.sh/@google/genai",
+    "react-tiny-virtual-list": "https://esm.sh/react-tiny-virtual-list@2.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-BySnGP77.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-m4aV7eYs.css">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+  <div id="root"></div>
+</body>
+</html>
