@@ -1,0 +1,6 @@
+{
+  "name": "Nouvelles Actualizaciones",
+  "description": "A responsive news web application that automatically fetches and displays the latest news feeds from various sources across business and sports categories. News items include thumbnails, titles, content snippets, and publication dates, with links opening in a new tab.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
